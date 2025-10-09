@@ -2,15 +2,15 @@ import java.util.Scanner;
 
 public class Ejercicio3 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.print("Introduzca las posiciones que tendrá el array: ");
-        while (!sc.hasNextInt()) {
+        while (!scanner.hasNextInt()) {
             System.out.println("Entrada no válida. Introduzca un entero positivo.");
-            sc.next();
+            scanner.next();
             System.out.print("Introduzca las posiciones que tendrá el array: ");
             }
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
         if (n <= 0) {
             System.out.println("El array debe tener al menos una posición.");
             return;
@@ -19,12 +19,12 @@ public class Ejercicio3 {
         int[] a = new int[n];
         for (int i = 0; i < n; i++) {
             System.out.print("Introduzca el número " + (i + 1) + ": ");
-            while (!sc.hasNextInt()) {
+            while (!scanner.hasNextInt()) {
                 System.out.println("Entrada no válida. Introduzca un entero.");
-                sc.next();
+                scanner.next();
                 System.out.print("Introduzca el número " + (i + 1) + ": ");
             }
-            a[i] = sc.nextInt();
+            a[i] = scanner.nextInt();
         }
 
         int mayor = a[0];
