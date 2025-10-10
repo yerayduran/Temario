@@ -10,7 +10,7 @@ public class Ejercicio1 {
 
 
     public static void main(String[] args) {
-        int[] posiciones = {5, 8, 3, 10, 2, 7};
+        int[] posiciones = {5, 8, -4, 10, 9, -7};
         System.out.println("Suma posiciones pares: " + posicionesPares(posiciones));
     }
 }
