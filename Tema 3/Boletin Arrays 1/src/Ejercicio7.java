@@ -15,6 +15,6 @@ public class Ejercicio7 {
         int[] vacio = {-9, 0, 7, 1};
         System.out.println(contieneElemento(vacio, 0));
 
-        System.out.println(contieneElemento(vacio, 1));
+        System.out.println(contieneElemento(null, 1));
     }
 }
