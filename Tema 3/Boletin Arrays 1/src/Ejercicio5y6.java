@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Ejercicio5y6 {
     public static boolean contiene(int[] arr, int valor) {  // comprueba si el array contiene el valor
-        Scanner sc = new Scanner(System.in);
         for (int x : arr) {
             if (x == valor) return true;
         }
@@ -22,7 +21,8 @@ public class Ejercicio5y6 {
             System.out.println("El array debe tener al menos una posición.");
             return;
         }
-        generaYmuestraArray((i));
+        generaYmuestraArray(i);
+        sc.close();
     }
 
 
