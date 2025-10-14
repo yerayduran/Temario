@@ -10,7 +10,7 @@ public class Ejercicio2 {
 
 
     public static void main(String[] args) {
-        int[] ejemplo = {5, -3, -2, -1, 7, -10};
-        System.out.println("Negativos: " + contarNegativos(ejemplo));
+        int[] negativos = {-5, 3, -2, -1, 7, -10};
+        System.out.println("Negativos: " + contarNegativos(negativos));
     }
 }

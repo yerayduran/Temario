@@ -56,14 +56,13 @@ public class Ejercicio4 {
             }
         }
         if (sinAparecer.length() == 0) {
-            System.out.println("Todos los dígitos 0..9 han aparecido al menos una vez.");
+            System.out.println("Todos los dígitos 0-9 han aparecido al menos una vez.");
         } else {
             System.out.println("Los dígitos que no han aparecido como final son: " + sinAparecer.toString());
         }
 
         System.out.println();
-        System.out.printf("El dígito en el que más números terminan es %d (se repite %d veces).%n",
-                digitoMasFrecuente, maxCuenta);
+        System.out.printf("El dígito en el que más números terminan es %d (se repite %d veces).%n", digitoMasFrecuente, maxCuenta);
 
 
         System.out.printf("La suma de todos los porcentajes es equivalente a %.2f%%%n", sumaPorcentajes);
@@ -72,6 +71,6 @@ public class Ejercicio4 {
         double sumaPct0a5 = 0.0;
         for (int d = 0; d <= 5; d++) sumaPct0a5 += porcentajes[d];
         double mediaPct0a5 = sumaPct0a5 / 6.0;
-        System.out.printf("El %% medio para los dígitos 0..5 es de %.2f%%%n", mediaPct0a5);
+        System.out.printf("El %% medio para los dígitos 0-5 es de %.2f%%%n", mediaPct0a5);
     }
 }
