@@ -22,7 +22,7 @@ public class Ejercicio4 {
 
         int digitoMasFrecuente = 0;
         int maxCuenta = contadorFinal[0];
-        for (int d = 1; d <= 9; d++) {
+        for (int d = 1; d <= 6; d++) {
             if (contadorFinal[d] > maxCuenta) {
                 maxCuenta = contadorFinal[d];
                 digitoMasFrecuente = d;
@@ -38,25 +38,24 @@ public class Ejercicio4 {
         System.out.printf("La media de los números generados es: %.4f%n", mediaNumeros);
         System.out.println();
 
-        for (int d = 0; d <= 9; d++) {
+        for (int d = 1; d <= 6; d++) {
             porcentajes[d] = 100.0 * contadorFinal[d] / N;
             sumaPorcentajes += porcentajes[d];
-            System.out.printf("El nº %d se ha repetido %d veces. Esto equivale a un %.2f%%%n",
-                    d, contadorFinal[d], porcentajes[d]);
+            System.out.printf("El nº %d se ha repetido %d veces. Esto equivale a un %.2f%%%n", d, contadorFinal[d], porcentajes[d]);
         }
 
         System.out.println();
 
 
         StringBuilder sinAparecer = new StringBuilder();
-        for (int d = 0; d <= 9; d++) {
+        for (int d = 1; d <= 6; d++) {
             if (contadorFinal[d] == 0) {
                 if (sinAparecer.length() > 0) sinAparecer.append(", ");
                 sinAparecer.append(d);
             }
         }
         if (sinAparecer.length() == 0) {
-            System.out.println("Todos los dígitos 0-9 han aparecido al menos una vez.");
+            System.out.println("Todos los dígitos 1-6 han aparecido al menos una vez.");
         } else {
             System.out.println("Los dígitos que no han aparecido como final son: " + sinAparecer.toString());
         }
@@ -71,6 +70,6 @@ public class Ejercicio4 {
         double sumaPct0a5 = 0.0;
         for (int d = 0; d <= 5; d++) sumaPct0a5 += porcentajes[d];
         double mediaPct0a5 = sumaPct0a5 / 6.0;
-        System.out.printf("El %% medio para los dígitos 0-5 es de %.2f%%%n", mediaPct0a5);
+        System.out.printf("El %% medio para los dígitos 1-6 es de %.2f%%%n", mediaPct0a5);
     }
 }
