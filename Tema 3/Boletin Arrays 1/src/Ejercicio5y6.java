@@ -44,7 +44,6 @@ public class Ejercicio5y6 {
             if (i < arr.length - 1) {
 
                 System.out.print(", ");
-
             }
 
         }
