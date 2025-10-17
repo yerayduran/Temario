@@ -1,6 +1,8 @@
 public class Ejercicio4 {
     private static final int N = 6000;
-    private static final int MAX_VALOR = 100;
+    private static final int MAX_VALOR = 6;
+    private static final int MIN_VALOR = 1;
+
 
     public static void main(String[] args) {  // Punto de entrada del programa
         int[] numeros = new int[N];
@@ -9,7 +11,7 @@ public class Ejercicio4 {
 
 
         for (int i = 0; i < N; i++) {  // Generar números aleatorios y contar dígitos finales
-            int v = (int) (Math.random() * (MAX_VALOR + 1));
+            int v = (int) (Math.random() * (MAX_VALOR - MIN_VALOR + 1));
             numeros[i] = v;
             sumaTotal += v;
             int digito = Math.abs(v) % 10;
@@ -25,7 +27,8 @@ public class Ejercicio4 {
         for (int d = 1; d <= 6; d++) {
             if (contadorFinal[d] > maxCuenta) {
                 maxCuenta = contadorFinal[d];
-                digitoMasFrecuente = d;
+                digitoMasFrecuente += contadorFinal[d];
+
             }
         }
 
