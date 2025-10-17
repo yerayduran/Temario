@@ -27,7 +27,7 @@ public class Ejercicio4 {
         for (int d = 1; d <= 6; d++) {
             if (contadorFinal[d] > maxCuenta) {
                 maxCuenta = contadorFinal[d];
-                digitoMasFrecuente += contadorFinal[d];
+                digitoMasFrecuente = d;
 
             }
         }
@@ -36,7 +36,7 @@ public class Ejercicio4 {
         double[] porcentajes = new double[10];
         double sumaPorcentajes = 0.0;
 
-        System.out.println("Se han generado " + N + " números aleatorios entre 0 y " + MAX_VALOR + ".");
+        System.out.println("Se han generado " + N + " números aleatorios entre " + MIN_VALOR + " y " + MAX_VALOR + ".");
         System.out.println();
         System.out.printf("La media de los números generados es: %.4f%%%n", mediaNumeros);
         System.out.println();
@@ -50,13 +50,14 @@ public class Ejercicio4 {
         System.out.println();
 
 
+        System.out.println("Todos los dígitos 1-6 han aparecido al menos una vez.");
 
-        int contadorDiferentes = 0;
-        for (int d = 0; d <= 1; d++) {
-            System.out.println("Todos los dígitos 1-6 han aparecido al menos una vez.");
-            if (d == 0) {
-                System.out.printf("Los dígitos que no han aparecido como final es: %d %n ", d);
+
+        for (int d = 1; d <= 6; d++) {
+            if (contadorFinal[d] == 0) {
+                System.out.printf("Los dígitos que no han aparecido como final es: %d %n ", contadorFinal[d]);
                 break;
+
             }
 
         }
