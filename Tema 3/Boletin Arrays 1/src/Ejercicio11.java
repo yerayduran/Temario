@@ -3,12 +3,12 @@ public class Ejercicio11 {
         if (arr1 == null || arr2 == null) return new int[0];
 
 
-        int[] temp = new int[Math.min(arr1.length, arr2.length)];  // tamaño máximo posible
+        int[] temp = new int[Math.min(arr1.length, arr2.length)];
         int contador = 0;
 
         for (int i = 0; i < arr1.length; i++) {  // recorrer arr1
             int valor = arr1[i];
-            if (existeEnArray(arr2, valor) && !existeEnArray(temp, valor, contador)) {
+            if (existeEnArray(arr2, valor) && !existeEnArray(temp, valor, contador)) { // si está en arr2 y no en temp
                 temp[contador++] = valor;
             }
         }
