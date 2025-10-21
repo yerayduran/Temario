@@ -11,7 +11,7 @@ public class Ejercicio4 {
 
 
         for (int i = 0; i < N; i++) {  // Generar números aleatorios y contar dígitos finales
-            int v = (int) (Math.random() * (MAX_VALOR - MIN_VALOR + 1));
+            int v = (int) (Math.random() * (MAX_VALOR - MIN_VALOR + 2));
             numeros[i] = v;
             sumaTotal += v;
             int digito = Math.abs(v) % 10;
@@ -22,12 +22,17 @@ public class Ejercicio4 {
         double mediaNumeros = (double) sumaTotal / N;
 
 
+        int digitoMenosFrecuente = 0;
+        int minCuenta = 0;
         int digitoMasFrecuente = 0;  // Encontrar el dígito más frecuente
-        int maxCuenta = contadorFinal[0];
+        int maxCuenta = 0;
         for (int d = 1; d <= 6; d++) {
             if (contadorFinal[d] > maxCuenta) {
                 maxCuenta = contadorFinal[d];
                 digitoMasFrecuente = d;
+            } else if (contadorFinal[d] < minCuenta || minCuenta == 0) {
+                minCuenta = contadorFinal[d];
+                digitoMenosFrecuente = d;
 
             }
         }
@@ -52,19 +57,9 @@ public class Ejercicio4 {
 
         System.out.println("Todos los dígitos 1-6 han aparecido al menos una vez.");
 
+        System.out.printf("El dígito más frecuente ha sido el %d, apareciendo %d veces.%n", digitoMasFrecuente, maxCuenta);
 
-        for (int d = 1; d <= 6; d++) {
-            if (contadorFinal[d] == 0) {
-                System.out.printf("Los dígitos que no han aparecido como final es: %d %n ", contadorFinal[d]);
-                break;
-
-            }
-
-        }
-
-        System.out.println();
-        System.out.printf("El dígito en el que más números terminan es %d (se repite %d veces)%n", digitoMasFrecuente, maxCuenta);
-
+        System.out.printf("El dígito menos frecuente ha sido el %d, apareciendo %d veces.%n", digitoMenosFrecuente, minCuenta);
 
         System.out.printf("La suma de todos los porcentajes es equivalente a %.2f%%%n", sumaPorcentajes);
 
