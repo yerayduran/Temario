@@ -3,11 +3,8 @@ public class Ejercicio5 {
     public static void imprimirPorColumnas(int[][] matriz) {
         if (matriz.length == 0) return;
 
-        int filas = matriz.length;
-        int columnas = matriz[0].length;
-
-        for (int j = 0; j < columnas; j++) {
-            for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < matriz[0].length; j++) {
+            for (int i = 0; i < matriz.length; i++) {
                 System.out.print(matriz[i][j] + " ");
             }
         }
