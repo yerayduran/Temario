@@ -20,7 +20,6 @@ public class Ejercicio7 {
 
         int[][] matrizA = {{1, 2, 3}, {4, 5, 6}};
         int[][] matrizB = {{1, 2, 3}, {4, 5, 6}};
-        int[][] matrizC = {{1, 2, 3}, {4, 5, 7}};
 
         boolean resultado1 = sonIguales(matrizA, matrizB);
         System.out.println("¿Matriz A es igual a Matriz B?: " + resultado1);
