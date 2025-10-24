@@ -24,8 +24,5 @@ public class Ejercicio7 {
 
         boolean resultado1 = sonIguales(matrizA, matrizB);
         System.out.println("¿Matriz A es igual a Matriz B?: " + resultado1);
-
-        boolean resultado2 = sonIguales(matrizA, matrizC);
-        System.out.println("¿Matriz A es igual a Matriz C?: " + resultado2);
     }
 }
