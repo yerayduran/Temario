@@ -1,9 +1,6 @@
 public class Ejercicio6{
 
     public static void imprimirPorFilas(int[][] matriz) {
-        if (matriz.length == 0) return;
-
-
         for (int j = matriz[0].length - 1; j >= 0; j--) {
             for (int i = matriz.length - 1; i >=0; i--) {
                 System.out.print(matriz[i][j] + " ");
