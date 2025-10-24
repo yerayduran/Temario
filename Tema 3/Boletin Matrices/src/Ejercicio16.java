@@ -24,7 +24,6 @@ public class Ejercicio16 {
                 resultado[i][j] = contador;
             }
         }
-
         return resultado;
     }
 
@@ -38,12 +37,7 @@ public class Ejercicio16 {
     }
 
     public static void main(String[] args) {
-        int[][] matriz = {
-                {2, 3, 4},
-                {5, 7, 6},
-                {8, 1, 0}
-        };
-
+        int[][] matriz = {{2, 3, 4}, {5, 7, 6}, {8, 1, 0}};
         int[][] resultado = contarParesAdyacentes(matriz);
         imprimirMatriz(resultado);
     }

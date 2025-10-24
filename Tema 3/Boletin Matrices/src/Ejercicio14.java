@@ -1,14 +1,11 @@
 public class Ejercicio14 {
 public static boolean transformarFilasPorColumnasYViceversa(int[][] matriz) {
-    int filas = matriz.length;
-    int columnas = matriz[0].length;
-
-    if (filas != columnas) {
+    if (matriz.length != matriz[0].length) {
         return false;
     }
 
-    for (int i = 0; i < filas; i++) {
-        for (int j = i + 1; j < columnas; j++) {
+    for (int i = 0; i < matriz.length; i++) {
+        for (int j = i + 1; j < matriz[0].length; j++) {
             int temp = matriz[i][j];
             matriz[i][j] = matriz[j][i];
             matriz[j][i] = temp;
@@ -20,8 +17,8 @@ public static void main(String[] args) {
     int[][] matriz = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
     System.out.println("Matriz original:");
-    for (int[] fila : matriz) {
-        for (int elemento : fila) {
+    for (int[] x : matriz) {
+        for (int elemento : x) {
             System.out.print(elemento + " ");
         }
         System.out.println();
@@ -29,8 +26,8 @@ public static void main(String[] args) {
 
     if (transformarFilasPorColumnasYViceversa(matriz)) {
         System.out.println("Matriz transpuesta:");
-        for (int[] fila : matriz) {
-            for (int elemento : fila) {
+        for (int[] x : matriz) {
+            for (int elemento : x) {
                 System.out.print(elemento + " ");
             }
             System.out.println();
