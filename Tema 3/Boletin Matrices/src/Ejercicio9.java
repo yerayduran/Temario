@@ -8,14 +8,12 @@ public class Ejercicio9 {
             }
         }
         return true;
-
     }
     public static void main(String[] args) {
-        int[][] matriz1 = {{1, 2, 3}, {4, 5, 6}, {1, 2, 3}};
-        int[][] matriz2 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] matrizSimetrica = {{1, 2, 3}, {4, 5, 6}, {1, 2, 3}};
+        int[][] matrizNoSimetrica = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
-        System.out.println("¿Matriz 1 es Simetrico?: " + matrizEsSimetricaAlEjeX(matriz1));
-        System.out.println("¿Matriz 2 es Simetrico?: " + matrizEsSimetricaAlEjeX(matriz2));
+        System.out.println("¿Esta Matriz es simétrica al eje X?: " + matrizEsSimetricaAlEjeX(matrizSimetrica));
+        System.out.println("¿Esta Matriz es Simétrica al eje X?: " + matrizEsSimetricaAlEjeX(matrizNoSimetrica));
     }
 }
-
