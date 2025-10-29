@@ -1,56 +1,45 @@
 public class Ejercicio16 {
 
-    public static int[][] contarParesAdyacentes(int[][] matriz) {
+    public static int[][] contarParesPegados(int[][] matriz) {
+
         int[][] resultado = new int[matriz.length][matriz[0].length];
+
+        int[] dirrx = {-1, -1, -1, 0, 0, 1, 1, 1};
+        int[] dirry = {-1, 0, 1, -1, 1, -1, 0, 1};
 
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {
-                int contador = 0;
+                int contadorPares = 0;
 
-                // Verificar arriba
-                if (i > 0 && matriz[i - 1][j] % 2 == 0) {
-                    contador++;
-                }
-                // Verificar abajo
-                if (i < matriz.length - 1 && matriz[i + 1][j] % 2 == 0) {
-                    contador++;
-                }
-                // Verificar izquierda
-                if (j > 0 && matriz[i][j - 1] % 2 == 0) {
-                    contador++;
-                }
-                // Verificar derecha
-                if (j < matriz[0].length - 1 && matriz[i][j + 1] % 2 == 0) {
-                    contador++;
+                for (int k = 0; k < 8; k++) {
+                    int nuevoX = i + dirrx[k];
+                    int nuevoY = j + dirry[k];
+
+                    // Verificar si el vecino está dentro de los límites de la matriz
+                    if (nuevoX >= 0 && nuevoX < matriz.length && nuevoY >= 0 && nuevoY < matriz[0].length) {
+                        if (matriz[nuevoX][nuevoY] % 2 == 0) {
+                            contadorPares++;
+                        }
+                    }
                 }
 
-                resultado[i][j] = contador;
+                resultado[i][j] = contadorPares;
             }
         }
 
         return resultado;
     }
-
     public static void main(String[] args) {
-        int[][] matriz = {{1, 0, 3}, {4, 5, 6}, {7, 8, 9}};
-        int[][] resultado = contarParesAdyacentes(matriz);
+        int[][] matriz = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
-        System.out.println("Matriz original:");
-        for (int[] x : matriz) {
-            for (int valor : x) {
-                System.out.print(valor + " ");
-            }
-            System.out.println();
-        }
+        int[][] resultado = contarParesPegados(matriz);
 
-        System.out.println("Matriz de conteo de pares adyacentes:");
-        for (int[] x : resultado) {
-            for (int valor : x) {
-                System.out.print(valor + " ");
+        // Imprimir la matriz resultado
+        for (int i = 0; i < resultado.length; i++) {
+            for (int j = 0; j < resultado[i].length; j++) {
+                System.out.print(resultado[i][j] + " ");
             }
             System.out.println();
         }
     }
-
-
 }
