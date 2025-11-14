@@ -9,11 +9,8 @@ public class Rectangulo {
 
     public Rectangulo (){
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Imprime el alto del rectagulo: ");
-        longitud = scanner.nextInt();
-        System.out.println("Imprime el ancho del rectagulo: ");
-        ancho = scanner.nextInt();
+        longitud= 1;
+        ancho = 1;
 
     }
 
