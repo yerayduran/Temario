@@ -19,7 +19,7 @@ public class Rectangulo {
     }
 
     public void setLongitud(int longitud) {
-        if(longitud > 0 && longitud < 20){
+        if(longitud > 0 && longitud <= 20){
             this.longitud = longitud;
         }
     }
@@ -29,7 +29,7 @@ public class Rectangulo {
     }
 
     public void setAncho(int ancho) {
-        if(ancho > 0 && ancho < 20){
+        if(ancho > 0 && ancho <= 20){
             this.ancho = ancho;
         }
     }
