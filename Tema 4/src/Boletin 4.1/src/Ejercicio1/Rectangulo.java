@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Rectangulo {
 
-    private  int ancho;
-    private  int longitud;
+    private int ancho;
+    private int longitud;
 
     public Rectangulo (){
         Scanner scanner = new Scanner(System.in);
