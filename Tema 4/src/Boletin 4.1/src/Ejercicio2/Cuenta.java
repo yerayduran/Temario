@@ -9,7 +9,7 @@ public class Cuenta {
 
     public Cuenta() {
         this.saldo = 1;
-        this.contadorRetiradas = 1;
+        this.contadorRetiradas = 0;
         this.contadorIngresos = 0;
     }
 
