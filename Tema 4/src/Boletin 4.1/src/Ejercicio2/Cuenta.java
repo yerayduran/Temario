@@ -27,7 +27,7 @@ public class Cuenta {
 
     public void setReintegro(long dineroRetirado) {
         if (dineroRetirado <= 0 || dineroRetirado > saldo) {
-            System.out.println("El saldo es insuficiente o el monto es inválido.");
+            System.out.println("El saldo es insuficiente o la cantidad es inválido.");
         } else {
             this.reintegro = dineroRetirado;
             this.saldo -= dineroRetirado;
