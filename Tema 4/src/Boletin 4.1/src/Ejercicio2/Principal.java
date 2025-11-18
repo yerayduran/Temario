@@ -1,9 +1,11 @@
 package Ejercicio2;
 
+import Ejercicio2.Excepcion.CuentaException;
+
 import java.util.Scanner;
 
 public class Principal {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CuentaException {
 
         Scanner sc = new Scanner(System.in);
         Cuenta c = new Cuenta();
@@ -12,11 +14,6 @@ public class Principal {
         System.out.println("¿Cuánto dinero tienes actualmente?");
         System.out.println("Es solo para saber cómo administrarte tu cuenta: ");
         long saldoInicial = sc.nextLong();
-
-        while (saldoInicial <= 0) {
-            System.out.println("Bro, ¿cómo va a ser tu cuenta en números rojos?");
-            saldoInicial = sc.nextLong();
-        }
 
         c.setSaldo(saldoInicial);
 
