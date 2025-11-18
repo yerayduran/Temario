@@ -1,5 +1,7 @@
 package Ejercicio2;
 
+import Ejercicio2.Exception.CuentaException;
+
 public class Cuenta {
     private long saldo;
     private long contadorRetiradas;
@@ -14,25 +16,21 @@ public class Cuenta {
     }
 
     public void setSaldo(long saldo) {
-        if (saldo < 0) {
-            System.out.println("El saldo no puede ser negativo.");
-        } else {
-            this.saldo = saldo;
-        }
+        if(saldo <= 0){
+        }this.saldo = saldo;
     }
 
     public long getReintegro() {
         return reintegro;
     }
 
-    public void setReintegro(long dineroRetirado) {
-        if (dineroRetirado <= 0 || dineroRetirado > saldo) {
-            System.out.println("El saldo es insuficiente o la cantidad es inválido.");
-        } else {
+    public void setReintegro(long dineroRetirado) throws CuentaException {
+        if (getSaldo() <= 0){
+            throw new CuentaException("No introducir mas numeros negativos: ");
+        }
             this.reintegro = dineroRetirado;
             this.saldo -= dineroRetirado;
             this.contadorRetiradas++;
-        }
     }
 
     public long getIngreso() {
@@ -41,12 +39,11 @@ public class Cuenta {
 
     public void setIngreso(long dineroIngresa) {
         if (dineroIngresa <= 0) {
-            System.out.println("El ingreso debe ser positivo.");
-        } else {
-            this.ingreso = dineroIngresa;
-            this.saldo += dineroIngresa;
-            this.contadorIngresos++;
+
         }
+        this.ingreso = dineroIngresa;
+        this.saldo += dineroIngresa;
+        this.contadorIngresos++;
     }
 
     public long getSaldo() {
