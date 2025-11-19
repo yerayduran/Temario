@@ -1,54 +1,44 @@
 package Ejercicio2;
 
-import Ejercicio2.Excepcion.CuentaException;
-
 public class Cuenta {
-    private long saldo;
+    private double saldo;
     private long contadorRetiradas;
     private long contadorIngresos;
-    private long reintegro;
-    private long ingreso;
 
-    public Cuenta() {
-        this.saldo = 1;
+    public Cuenta(double saldoInicial) throws CuentaException{
+        this.setSaldo(0);
         this.contadorRetiradas = 0;
         this.contadorIngresos = 0;
     }
 
-    public void setSaldo(long saldo) throws CuentaException{
+    private void setSaldo(double saldo) throws CuentaException{
         if(saldo < 0){
             throw new CuentaException("Tu saldo debe de ser positivo");
         }
         this.saldo = saldo;
     }
 
-    public long getReintegro() {
-        return reintegro;
-    }
-
-    public void setReintegro(long dineroRetirado) throws CuentaException {
-        if (getSaldo() <= 0){
-            throw new CuentaException("No introducir más numeros negativos: ");
+    public void reintegro(double dineroRetirado) throws CuentaException {
+        if (dineroRetirado < 0){
+            throw new CuentaException("No introducir más numeros negativos");
         }
-        this.reintegro = dineroRetirado;
+        if (dineroRetirado > this.saldo){
+            throw new CuentaException("No tiene suficiente saldo");
+        }
         this.saldo -= dineroRetirado;
         this.contadorRetiradas++;
     }
 
-    public long getIngreso() {
-        return ingreso;
-    }
 
-    public void setIngreso(long dineroIngresa) throws CuentaException {
-        if (dineroIngresa <= 0) {
+    public void ingreso(double dineroIngresa) throws CuentaException {
+        if (dineroIngresa < 0) {
             throw new CuentaException("Como vas a ingresar un numero negativo melón");
         }
-        this.ingreso = dineroIngresa;
         this.saldo += dineroIngresa;
         this.contadorIngresos++;
     }
 
-    public long getSaldo() {
+    double getSaldo() {
         return saldo;
     }
 

@@ -1,55 +1,65 @@
 package Ejercicio2;
 
-import Ejercicio2.Excepcion.CuentaException;
+import Ejercicio2.Cuenta;
 
 import java.util.Scanner;
 
-public class Principal {
-    public static void main(String[] args) throws CuentaException {
 
-        Scanner sc = new Scanner(System.in);
-        Cuenta c = new Cuenta();
+
+public class Principal {
+    public static void main(String[] args) {
+        Cuenta c = null;
+        while (c == null) {
+            try {
+                double saldoInicial = MiEntradaSalida.solicitarEnteroPositivo("Introduce el saldo inicial");
+                c = new Cuenta(saldoInicial);
+            } catch (CuentaException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
         int opcion;
 
-        System.out.println("¿Cuánto dinero tienes actualmente?");
-        System.out.println("Es solo para saber cómo administrarte tu cuenta: ");
-        long saldoInicial = sc.nextLong();
-
-        c.setSaldo(saldoInicial);
-
         do {
-            System.out.println("\n--- Menú de operaciones ---");
-            System.out.println("Pulsa 1 para hacer una retirada de dinero");
-            System.out.println("Pulsa 2 para ingresar dinero");
-            System.out.println("Pulsa 3 para mostrar las operaciones realizadas");
-            System.out.println("Pulsa 4 para finalizar");
-            System.out.println("");
-            System.out.println("Selecciona una opción: ");
-            opcion = sc.nextInt();
+            mostarMenu();
+
+            opcion = MiEntradaSalida.solicitarEnteroEnRango("Escribe una opción: ", 0, 3);
 
             switch (opcion) {
-                case 1:
-                    System.out.println("¿Cuánto quieres retirar?: ");
-                    long dineroRetirado = sc.nextLong();
-                    c.setReintegro(dineroRetirado);
-                    break;
-                case 2:
-                    System.out.println("¿Cuánto dinero quieres ingresar?: ");
-                    long dineroIngresa = sc.nextLong();
-                    c.setIngreso(dineroIngresa);
-                    break;
                 case 3:
                     c.consultarOperaciones();
                     break;
-                case 4:
-                    c.finalizar();
+                case 2:
+                    int dineroAIngresar = MiEntradaSalida.solicitarEnteroPositivo("¿Cuánto dinero desea ingresar");
+                    try {
+                        c.reintegro(dineroAIngresar);
+                        System.out.printf("Su saldo actual es de %.2f%n", c.getSaldo());
+                    } catch (CuentaException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
-                default:
-                    System.out.println("No ha seleccionado una opción válida.");
+                case 1:
+                    int dineroARetirar = MiEntradaSalida.solicitarEnteroPositivo("¿Cuánto dinero desea retirar");
+                    try {
+                        c.reintegro(dineroARetirar);
+                        System.out.printf("Su saldo actual es de %.2f%n", c.getSaldo());
+                    } catch (CuentaException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
-            }
-        } while (opcion != 4);
+                case 0:
+                    System.out.println("Gracias por utilizar este cajero. Adiós.");
+                    break;
 
-        sc.close();
+            }
+        } while (opcion != 0);
+    }
+
+    public static void mostarMenu() {
+        System.out.println("¿Qué desea hacer?");
+        System.out.println("0. Salir");
+        System.out.println("1. Retirar");
+        System.out.println("2. Ingresar");
+        System.out.println("3. Consultar movimientos en la cuenta");
     }
 }

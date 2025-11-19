@@ -1,8 +1,7 @@
-package Ejercicio2.Exception;
+package Ejercicio2;
 
 public class CuentaException extends Exception {
     public CuentaException(String message) {
         super(message);
     }
 }
-
