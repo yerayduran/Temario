@@ -2,9 +2,9 @@ package Ejercicio2;
 
 import Ejercicio2.Cuenta;
 
+import Ejercicio2.Exception.CuentaException;
+
 import java.util.Scanner;
-
-
 
 public class Principal {
     public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class Principal {
                 case 2:
                     int dineroAIngresar = MiEntradaSalida.solicitarEnteroPositivo("¿Cuánto dinero desea ingresar");
                     try {
-                        c.reintegro(dineroAIngresar);
+                        c.ingreso(dineroAIngresar);
                         System.out.printf("Su saldo actual es de %.2f%n", c.getSaldo());
                     } catch (CuentaException e) {
                         System.out.println(e.getMessage());

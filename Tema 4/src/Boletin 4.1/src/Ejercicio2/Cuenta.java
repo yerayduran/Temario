@@ -1,12 +1,14 @@
 package Ejercicio2;
 
+import Ejercicio2.Exception.CuentaException;
+
 public class Cuenta {
     private double saldo;
-    private long contadorRetiradas;
-    private long contadorIngresos;
+    private double contadorRetiradas;
+    private double contadorIngresos;
 
-    public Cuenta(double saldoInicial) throws CuentaException{
-        this.setSaldo(0);
+    public Cuenta(double saldoInicial) throws CuentaException {
+        this.setSaldo(saldoInicial);
         this.contadorRetiradas = 0;
         this.contadorIngresos = 0;
     }
@@ -19,13 +21,10 @@ public class Cuenta {
     }
 
     public void reintegro(double dineroRetirado) throws CuentaException {
-        if (dineroRetirado < 0){
-            throw new CuentaException("No introducir más numeros negativos");
+        if (dineroRetirado < 0 || dineroRetirado > saldo){
+            throw new CuentaException("Hazlo bien hermano");
         }
-        if (dineroRetirado > this.saldo){
-            throw new CuentaException("No tiene suficiente saldo");
-        }
-        this.saldo -= dineroRetirado;
+        this.saldo = this.saldo - dineroRetirado;
         this.contadorRetiradas++;
     }
 
