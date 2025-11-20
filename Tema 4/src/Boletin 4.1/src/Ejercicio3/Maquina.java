@@ -11,9 +11,9 @@ public class Maquina {
     private double monedero;
 
     // Precios
-    private static final double PRECIO_CAFE = 1.00;
-    private static final double PRECIO_LECHE = 0.80;
-    private static final double PRECIO_CAFE_LECHE = 1.50;
+    private static final double PRECIO_CAFE = 1.0;
+    private static final double PRECIO_LECHE = 0.8;
+    private static final double PRECIO_CAFE_LECHE = 1.5;
 
     // Cantidad máxima depósitos
     private static final int MAX_DEPOSITO_CAFE = 50;
@@ -22,7 +22,7 @@ public class Maquina {
 
     // Creamos el constructor dándole valores iniciales a los atributos
     public Maquina() {
-        this.monedero = 0;
+        this.monedero = 0.0;
         rellenarDepositos();
     }
 
@@ -95,19 +95,21 @@ public class Maquina {
     // Calculamos el cambio que nos devolverá la máquina
     public void retirarDinero(double dineroIntroducido, double precio) throws MaquinaException {
         double cambio;
-        cambio = Math.abs(dineroIntroducido - precio);
+        double cambioRedondeado;
+        cambio = dineroIntroducido - precio;
+        cambioRedondeado = Math.round(cambio * 100)/100.00;
 
-        if (this.monedero < cambio) {
+        if (this.monedero < cambioRedondeado) {
             throw new MaquinaException("La máquina no dispone del cambio necesario, lo siento");
         }
-        this.monedero -= cambio;
+        this.monedero -= cambioRedondeado;
         this.monedero += dineroIntroducido;
-        System.out.println("Recoja su cambio de " + cambio);
+        System.out.println("Recoja su cambio de " + cambioRedondeado + " euros");
     }
 
     // Vaciamos el monedero
     public void vaciarMonedero() {
-        this.monedero = 0.00;
+        this.monedero = 0.0;
     }
 
     // Hacemos los get para acceder al valor de los atributos fuera de la clase
