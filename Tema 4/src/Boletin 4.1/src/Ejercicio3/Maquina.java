@@ -2,45 +2,128 @@ package Ejercicio3;
 
 import Ejercicio3.Exception.MaquinaException;
 
-public class Maquina{
+public class Maquina {
 
-    private int depCafe;
-    private int depLeche;
-    private int depVasos;
-    private double cafe;
-    private double leche;
-    private double cafeConLeche;
-    private int contadorDepositos;
+    // Atributos
+    private int depositoCafe;
+    private int depositoLeche;
+    private int depositoVasos;
     private double monedero;
 
-    public Maquina(double saldoIntroducido) throws MaquinaException{
-        this.setMonedero(saldoIntroducido);
-        this.cafe = 1.0;
-        this.leche = 0.8;
-        this.cafeConLeche = 1.5;
-        this.depCafe = 50;
-        this.depLeche = 50;
-        this.depVasos = 80;
+    // Precios
+    private static final double PRECIO_CAFE = 1.00;
+    private static final double PRECIO_LECHE = 0.80;
+    private static final double PRECIO_CAFE_LECHE = 1.50;
+
+    // Cantidad máxima depósitos
+    private static final int MAX_DEPOSITO_CAFE = 50;
+    private static final int MAX_DEPOSITO_LECHE = 50;
+    private static final int MAX_DEPOSITO_VASOS = 80;
+
+    // Creamos el constructor dándole valores iniciales a los atributos
+    public Maquina() {
+        this.monedero = 0;
+        rellenarDepositos();
     }
 
-    private void setMonedero(double monedero)  throws MaquinaException {
-        if(monedero < 0){
-            throw new MaquinaException("Tu saldo debe de ser positivo");
+    // Rellenamos los depósitos al máximo
+    public void rellenarDepositos() {
+        this.depositoCafe = MAX_DEPOSITO_CAFE;
+        this.depositoLeche = MAX_DEPOSITO_LECHE;
+        this.depositoVasos = MAX_DEPOSITO_VASOS;
+    }
+
+    // Se resta 1 dosis para el depósito de café en caso de que haya
+    public void pedirCafeSolo(double dineroAMeter) throws MaquinaException {
+        if (dineroAMeter < PRECIO_CAFE) {
+            throw new MaquinaException("El saldo es insuficiente");
         }
-        this.monedero = monedero;
+        if (this.depositoVasos < 1) {
+            throw new MaquinaException("No quedan vasos, lo siento");
+        }
+        if (this.depositoCafe < 1) {
+            throw new MaquinaException("No quedan dosis de café");
+        }
+        retirarDinero(dineroAMeter, PRECIO_CAFE);
+        System.out.println("Café solo servido");
+        this.depositoCafe--;
+        this.depositoVasos--;
+
+    }
+
+    // Se resta 1 dosis del depósito de leche en caso de que haya
+    public void pedirLeche(double dineroAMeter) throws MaquinaException {
+
+        if (dineroAMeter < PRECIO_LECHE) {
+            throw new MaquinaException("El saldo es insufiente");
+        }
+        if (this.depositoVasos < 1) {
+            throw new MaquinaException("No quedan vasos, lo siento");
+        }
+
+        if (this.depositoLeche < 1) {
+            throw new MaquinaException("No quedan dosis de leche");
+        }
+
+        retirarDinero(dineroAMeter, PRECIO_LECHE);
+        System.out.println("Leche servida");
+        this.depositoLeche--;
+        this.depositoVasos--;
+    }
+
+    // Se resta 1 dosis de los depósitos de café y leche en caso de que haya
+    public void pedirCafeConLeche(double dineroAMeter) throws MaquinaException {
+
+        if (dineroAMeter < PRECIO_CAFE_LECHE) {
+            throw new MaquinaException("El saldo es insuficiente");
+        }
+
+        if (this.depositoVasos < 1) {
+            throw new MaquinaException("No quedan vasos, lo siento");
+        }
+
+        if (this.depositoCafe < 1 || this.depositoLeche < 1) {
+            throw new MaquinaException("No quedan dosis de café o leche, lo siento");
+        }
+        retirarDinero(dineroAMeter, PRECIO_CAFE_LECHE);
+        System.out.println("Café con leche servida");
+        this.depositoCafe--;
+        this.depositoLeche--;
+        this.depositoVasos--;
+    }
+
+    // Calculamos el cambio que nos devolverá la máquina
+    public void retirarDinero(double dineroIntroducido, double precio) throws MaquinaException {
+        double cambio;
+        cambio = Math.abs(dineroIntroducido - precio);
+
+        if (this.monedero < cambio) {
+            throw new MaquinaException("La máquina no dispone del cambio necesario, lo siento");
+        }
+        this.monedero -= cambio;
+        this.monedero += dineroIntroducido;
+        System.out.println("Recoja su cambio de " + cambio);
+    }
+
+    // Vaciamos el monedero
+    public void vaciarMonedero() {
+        this.monedero = 0.00;
+    }
+
+    // Hacemos los get para acceder al valor de los atributos fuera de la clase
+    public int getDepositoCafe() {
+        return depositoCafe;
+    }
+
+    public int getDepositoLeche() {
+        return depositoLeche;
+    }
+
+    public int getDepositoVasos() {
+        return depositoVasos;
     }
 
     public double getMonedero() {
         return monedero;
     }
-
-    public void consultarOperaciones() {
-        System.out.println("El saldo es de " + getMonedero() + " $");
-        System.out.println("Se han realizado " + this.contadorDepositos + " ingresos");
-    }
-
-    public void finalizar() {
-        System.out.println("Has salido, te has quedado con un saldo de " + this.monedero + " $");
-    }
-
 }

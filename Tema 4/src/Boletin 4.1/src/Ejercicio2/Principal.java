@@ -48,7 +48,7 @@ public class Principal {
                     }
                     break;
                 case 0:
-                    System.out.println("Gracias por utilizar este cajero. Adiós.");
+                    c.finalizar();
                     break;
 
             }

@@ -13,7 +13,7 @@ public class Cuenta {
         this.contadorIngresos = 0;
     }
 
-    private void setSaldo(double saldo) throws CuentaException{
+    public void setSaldo(double saldo) throws CuentaException{
         if(saldo < 0){
             throw new CuentaException("Tu saldo debe de ser positivo");
         }
@@ -37,7 +37,7 @@ public class Cuenta {
         this.contadorIngresos++;
     }
 
-    double getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
