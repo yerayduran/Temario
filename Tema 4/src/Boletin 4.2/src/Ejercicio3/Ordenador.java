@@ -1,7 +1,12 @@
-package Ejercicio2;
+package Ejercicio3;
 
+
+import Ejercicio2.*;
 import Ejercicio2.Exception.OrdenadorException;
+import Ejercicio2.Montar;
+import Ejercicio3.Exception.VideojuegoException;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Ordenador {
@@ -18,15 +23,15 @@ public class Ordenador {
         // Bloque 'PlacaBase'
 
         //Le pedimos al usuario que introduzca la marca
-        String marcaPlacaBase = MiEntradaSalida.solicitarCadena("Introduce la marca de la placa base");
+        String marcaPlacaBase = MiEntradaSalida.solicitarCadena("Introduce la marca de la placa base (MSI, ASUS, ...): ");
         pb.setMarca(marcaPlacaBase);
 
         // Le pedimos al usuario que introduzca el chipset
-        String chipsetPlacaBase = MiEntradaSalida.solicitarCadena("Introduce el chipset de la placa base");
+        String chipsetPlacaBase = MiEntradaSalida.solicitarCadena("Introduce el chipset de la placa base: ");
         pb.setChipset(chipsetPlacaBase);
 
         // Le pedimos al usuario que introduzca el socket
-        String socketPlacaBase = MiEntradaSalida.solicitarCadena("Introduce el socket de la placa base");
+        String socketPlacaBase = MiEntradaSalida.solicitarCadena("Introduce el socket de la placa base: ");
         pb.setSocket(socketPlacaBase);
 
         // Bloque 'Microprocesador'
@@ -127,9 +132,42 @@ public class Ordenador {
         tg.setCantidadDeMemoria(cantidadMemoriaTarjetaGrafica);
 
         // Creamos la clase ordenador, pasándole sus perisféricos
-        Montar m = new Montar(pb, mp, dd, tg);
+        Ejercicio2.Montar m = new Montar(pb, mp, dd, tg);
         // Imprimimos los atributos de todos los componentes del ordenador
 
         System.out.println(m);
+
+        // Creamos la clase videojuego
+        Videojuego vd = null;
+        while (vd == null){
+            try{
+                System.out.print("Introduce el nombre del juego: ");
+                String nombre = sc.nextLine();
+                System.out.print("Introduce el nombre de la compañia del juego: ");
+                String compañiaCreadora = sc.nextLine();
+                System.out.print("Introduce la fecha del lanzamiento del juego (YYYY-MM-DD): ");
+                LocalDate añoCreacion = LocalDate.parse(sc.nextLine());
+                System.out.print("Introduce los nucleos del microprocesador necesarios para que funcione el juego: ");
+                int nucleosMinimosMicroprocesador = Integer.parseInt(sc.nextLine());
+                System.out.print("Introduce la velocidad del microprocesador necesarios para que funcione el juego: ");
+                float velocidadMinimaMicroprocesador = sc.nextFloat();
+                System.out.print("Introduce la velocidad minimo del microprocesador: ");
+                int espacioMinimoDiscoDuro = Integer.parseInt(sc.nextLine());
+                System.out.print("Introduce los nucleos minimos para el uso del juego en la tarjeta grafica: ");
+                int nucleosMinimosTarjetaGrafica = Integer.parseInt(sc.nextLine());
+                System.out.print("Introduce el espacio minimo para el uso del juego en la tarjeta grafica: ");
+                int espacioMinimoTarjetaGrafica = Integer.parseInt(sc.nextLine());
+
+                vd = new Videojuego(nombre, compañiaCreadora, añoCreacion, nucleosMinimosMicroprocesador, velocidadMinimaMicroprocesador, espacioMinimoDiscoDuro, nucleosMinimosTarjetaGrafica, espacioMinimoTarjetaGrafica);
+
+                vd.mostrarInfo();
+            }catch (VideojuegoException e) {
+                System.out.println("Error: " + e.getMessage());
+
+            }
+
+            sc.close();
+        }
+
     }
 }

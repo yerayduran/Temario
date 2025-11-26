@@ -3,13 +3,13 @@ package Ejercicio2;
 
 import Ejercicio2.Exception.OrdenadorException;
 
-public class Placabase {
+public class PlacaBase {
 
     private String marca;
     private String chipset;
     private String socket;
 
-    public Placabase() {
+    public PlacaBase() {
     }
 
     public boolean esCompatible(Microprocesador mp) throws OrdenadorException{
