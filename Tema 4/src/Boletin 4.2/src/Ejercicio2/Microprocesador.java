@@ -20,13 +20,7 @@ public class Microprocesador {
 
     @Override
     public String toString() {
-        return "Microprocesador{" +
-                "marca='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", numeroDeNucleos=" + numDeNucleos +
-                ", velocidadBase=" + velBase +
-                ", socket='" + socket + '\'' +
-                '}';
+        return "Microprocesador{" + "marca='" + marca + '\'' + ", modelo='" + modelo + '\'' + ", numeroDeNucleos=" + numDeNucleos + ", velocidadBase=" + velBase + ", socket='" + socket + '\'' + '}';
     }
 
     public void setMarca(String marca) {
