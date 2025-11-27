@@ -8,13 +8,13 @@ public class Punto {
     private double x;
     private double y;
 
-    // Generamos el constructor pasándole los los atributos
+    // Generamos el constructor pasándole los atributos
     public Punto(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    // Generamos un construcor vacío
+    // Generamos un constructor vacío
     public Punto() {
     }
 
@@ -27,7 +27,7 @@ public class Punto {
         return y;
     }
 
-    // Generamos los set para modificar el valor de estos atributos
+    // Generamos los sets para modificar el valor de estos atributos
     public void setY(double y) {
         this.y = y;
     }

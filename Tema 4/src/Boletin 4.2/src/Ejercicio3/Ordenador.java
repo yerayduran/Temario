@@ -134,9 +134,7 @@ public class Ordenador {
         // Creamos la clase ordenador, pasándole sus perisféricos
         Ejercicio2.Montar m = new Montar(pb, mp, dd, tg);
         // Imprimimos los atributos de todos los componentes del ordenador
-
         System.out.println(m);
-
         // Creamos la clase videojuego
         Videojuego vd = null;
         while (vd == null){
@@ -163,9 +161,7 @@ public class Ordenador {
                 vd.mostrarInfo();
             }catch (VideojuegoException e) {
                 System.out.println("Error: " + e.getMessage());
-
             }
-
             sc.close();
         }
 

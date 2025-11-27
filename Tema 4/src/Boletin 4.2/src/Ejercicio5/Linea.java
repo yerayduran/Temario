@@ -18,7 +18,6 @@ public class Linea {
 
     // Constructor que le da unos valores a los atributos de la clase 'Punto'
     public Linea() {
-
         // Tenemos que crear los objetos para poder inicializarlos con los valores que queremos
         this.puntoA = new Punto(0.0, 0.0);
         this.puntoB = new Punto(0.0, 0.0);
@@ -62,12 +61,9 @@ public class Linea {
 
     // Movemos los puntos a la derecha
     public void moverDerecha (double distancia) throws LineaException {
-
         if (distancia < 0) {
-
             throw new LineaException("No puede ser negativa la distancia");
         }
-
         // Sumamos los valores a X
         System.out.println("Has movido la línea");
         this.puntoA.setX(this.puntoA.getX() + distancia);
@@ -76,12 +72,9 @@ public class Linea {
 
     // Movemos los puntos a la izquierda
     public void moverIzquierda(double distancia) throws LineaException {
-
         if (distancia < 0) {
-
             throw new LineaException("No puede ser negativa la distancia");
         }
-
         // Restamos los valores a x
         System.out.println("Has movido la línea");
         this.puntoA.setX(this.puntoA.getX() - distancia);
@@ -90,9 +83,7 @@ public class Linea {
 
     // Movemos los puntos hacia arriba
     public void moverArriba(double distancia) throws LineaException {
-
         if (distancia < 0) {
-
             throw new LineaException("No puede ser negativa la distancia");
         }
         // Sumamos los valores y
@@ -102,12 +93,9 @@ public class Linea {
     }
 
     public void moverAbajo(double distancia) throws LineaException {
-
         if (distancia < 0) {
-
             throw new LineaException("No puede ser negativa la distancia");
         }
-
         // Restamos a los valores y
         System.out.println("Has movido la línea");
         this.puntoA.setY(this.puntoA.getY() - distancia);

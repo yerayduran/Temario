@@ -38,7 +38,7 @@ public class Videojuego {
 
     // Comprueba que el año de creación del videojuego tenga consistencia
     public void setAñoCreacion(LocalDate añoCreacion) throws VideojuegoException {
-        if ((añoCreacion.isAfter(LocalDate.now())) || LocalDate.of(1951, 12, 31).isBefore(añoCreacion)){
+        if ((añoCreacion.isAfter(LocalDate.now())) || LocalDate.of(1951, 12, 31).isAfter(añoCreacion)){
             throw new VideojuegoException("Este año no es válido");
         }
 
@@ -60,10 +60,8 @@ public class Videojuego {
     public void setVelocidadMinimaMicroprocesador(float velocidadMinimaMicroprocesador) throws VideojuegoException {
 
         if (velocidadMinimaMicroprocesador < 1) {
-
             throw new VideojuegoException("Introduce una cantidad válida");
         }
-
         this.velocidadMinimaMicroprocesador = velocidadMinimaMicroprocesador;
     }
 
