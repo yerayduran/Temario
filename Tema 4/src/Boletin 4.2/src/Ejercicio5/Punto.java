@@ -38,7 +38,7 @@ public class Punto {
 
     @Override
     public String toString() {
-        return "Punto{" + "x=" + x + ", y=" + y + '}';
+        return "Punto {" + "x = " + x + " , y = " + y + " }";
     }
 
     // Comparamos si los ejes son iguales o no

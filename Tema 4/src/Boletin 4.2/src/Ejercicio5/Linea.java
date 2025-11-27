@@ -104,6 +104,6 @@ public class Linea {
 
     @Override
     public String toString() {
-        return "Linea{" + "puntoA=" + puntoA + ", puntoB=" + puntoB + '}';
+        return "Linea {" + "puntoA =" + puntoA + ", puntoB = " + puntoB + " }";
     }
 }
