@@ -9,10 +9,12 @@ public class Producto {
     private String descripcion;
     private double precio;
 
-    private static final int IVA = 20;
+    private static int contadorId = 0;
 
-    public Producto(){
-        this.idProducto = generarId();
+    public Producto(String descripcion, double precio, int idProducto){
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.idProducto = Integer.parseInt("PROD" + contadorId++);
     }
 
     public double getPrecio() {
@@ -41,9 +43,4 @@ public class Producto {
     public void setIdProducto(int idProducto) {
         this.idProducto = idProducto;
     }
-
-
-    private static int generarId (){
-    }
-
 }
