@@ -37,9 +37,7 @@ public class Jarra {
 
     // Hacemos el método para rellenar la jarra
     public void rellenarJarra() throws JarraException {
-
         if (this.cantidadAgua == this.capacidadJarra) {
-
             throw new JarraException("La jarra está llena");
         }
 
