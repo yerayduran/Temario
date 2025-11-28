@@ -6,7 +6,7 @@ import Ejercicio8.Exception.FutbolException;
 public class BeSoccer {
     public static void main(String[] args) {
 
-        // Creamos los partido
+        // Creamos los partidos
         Partidos partido;
         Partidos partido2;
         Partidos partido3;
@@ -19,7 +19,6 @@ public class BeSoccer {
         // Hacemos que se repita hasta que se haya jugado el partido
         int opcion;
         try {
-
             // Definimos los atributos de los equipos
             equipo1 = new Equipo("Barcelona");
             equipo2 = new Equipo("Sevilla F.C.");
@@ -31,7 +30,6 @@ public class BeSoccer {
             // Creamos el resultado del partido, se lo pasamos por parámetros al método
             opcion = MiEntradaSalida.solicitarEnteroPositivo("Pulsa 1 para jugar el primer partido");
             if (opcion == 1) {
-
                 partido.ponerResultado("2-1");
             }
 

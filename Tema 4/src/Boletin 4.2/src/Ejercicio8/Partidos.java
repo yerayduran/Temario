@@ -45,7 +45,7 @@ public class Partidos {
         return equipoVisitante;
     }
 
-    // Hacemos los set para moidificar los atributos
+    // Hacemos los sets para modificar los atributos
     public void setEstadio(String estadio) {
         this.estadio = estadio;
     }
@@ -56,6 +56,7 @@ public class Partidos {
         }
         this.jornada = jornada;
     }
+
 
     public void ponerResultado(String resultado) {
 

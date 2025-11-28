@@ -37,7 +37,7 @@ public class Equipo {
         return partidosGanados;
     }
 
-    // Comparamos los nombre de los equipos para ver si son el mismo equipo
+    // Comparamos los nombres de los equipos para ver si son el mismo equipo
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
