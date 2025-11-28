@@ -44,4 +44,10 @@ public class Producto {
     public double precioVenta(){
         return precio * (1 + getIVA());
     }
+
+    public void mostrarInfo(){
+        System.out.println("Producto: " + this.descripcion);
+        System.out.println("Precio sin IVA: " + this.precio);
+        System.out.println("Precio con IVA: " + this.precioVenta());
+    }
 }

@@ -54,33 +54,25 @@ public class Jarra {
 
     // Hacemos el método para vaciar la jarra
     public void vaciarJarra() throws JarraException {
-
         if (this.cantidadAgua == 0) {
-
             throw new JarraException("La jarra ya está vacía");
         }
-
         // Quitamos la cantidad de agua que había
         this.cantidadAgua = 0;
     }
 
     // Hacemos el método de volcar la jarra
     public void volcarJarra(Jarra j) {
-
         // Calculamos la capacidad de la jarra a la que se le va a echar el agua
         double capacidadJarraAVertir = j.capacidadJarra - j.cantidadAgua;
-
         /* Si la capacidad de la jarra "B" es mayor o igual que la cantidad de
         agua que la jarra "A", se echa toda el agua */
         if (capacidadJarraAVertir >= this.cantidadAgua) {
-
             // Le sumamos a la jarra "B" el agua de la jarra "A"
             j.cantidadAgua += this.cantidadAgua;
             // Como hemos pasado por completo el agua que había en la jarra "A" a la "B", la "A no tendrá agua"
             this.cantidadAgua = 0;
-
         } else {
-
             // Le sumamos a la jarra "B" la capacidad que le cabe
             j.cantidadAgua += capacidadJarraAVertir;
             // Restamos a la cantidad de agua de la jarra "A" la capacidad que le quedaba a la "B"
@@ -91,10 +83,6 @@ public class Jarra {
     // Hacemos método para ver el estado de las jarras
     @Override
     public String toString() {
-        return "Jarra{" +
-                "capacidadJarra=" + capacidadJarra +
-                ", cantidadAgua=" + cantidadAgua +
-                ", totalAguaConsumida=" + totalAguaConsumida +
-                '}';
+        return "Jarra { " + "capacidadJarra = " + capacidadJarra + " , cantidadAgua = " + cantidadAgua + " , totalAguaConsumida = " + totalAguaConsumida + " }";
     }
 }

@@ -21,12 +21,12 @@ public class BeSoccer {
         try {
 
             // Definimos los atributos de los equipos
-            equipo1 = new Equipo("Real Betis Balompie");
+            equipo1 = new Equipo("Barcelona");
             equipo2 = new Equipo("Sevilla F.C.");
             equipo3 = new Equipo("Rayo Vallecano");
 
             // Definimos los atributos del partido
-            partido = new Partidos(7, "Benito Villamarín", equipo1, equipo2);
+            partido = new Partidos(7, "Camp Nou", equipo1, equipo2);
 
             // Creamos el resultado del partido, se lo pasamos por parámetros al método
             opcion = MiEntradaSalida.solicitarEnteroPositivo("Pulsa 1 para jugar el primer partido");

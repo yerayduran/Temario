@@ -10,16 +10,13 @@ public class Comercio {
         Scanner sc = new Scanner(System.in);
         Producto p = null;
         while(p == null){
-            try{
-                System.out.printf("Introduce el producto: ");
-                String descripcion = sc.nextLine();
-                System.out.printf("Introduce precio sin IVA: ");
-                double precio = sc.nextDouble();
+            System.out.printf("Introduce el producto: ");
+            String descripcion = sc.nextLine();
+            System.out.printf("Introduce precio sin IVA: ");
+            double precio = sc.nextDouble();
 
-                p = new Producto(descripcion, precio);
-            } catch (ProductoException e) {
-                System.out.println(e.getMessage());
-            }
+            p = new Producto(descripcion, precio);
+            p.mostrarInfo();
             sc.close();
         }
 
