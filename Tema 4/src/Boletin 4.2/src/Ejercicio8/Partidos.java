@@ -59,25 +59,26 @@ public class Partidos {
 
 
     public void ponerResultado(String resultado) {
-
         // Si se ha jugado el partido pasará a true
         jugado = true;
 
-        // A partir de un String sacamos los goles y lo pasamos a int
         String[] resultados = resultado.split("-");
         int golesEquipoLocal = Integer.parseInt(resultados[0]);
         int golesEquipoVisitante = Integer.parseInt(resultados[1]);
 
-        // Actualizamos los goles y la quiniela
+        // Actualizamos los goles
         this.equipoLocal.setGoles(golesEquipoLocal);
         this.equipoVisitante.setGoles(golesEquipoVisitante);
-        this.quiniela = resultado;
 
-        // Comprobamos que equipo gana y le sumamos 1 a los partidos ganados
+        // Comprobamos qué equipo gana y actualizamos quiniela
         if (golesEquipoLocal > golesEquipoVisitante) {
+            this.quiniela = "1";
             this.equipoLocal.sumarPartidoGanado();
         } else if (golesEquipoLocal < golesEquipoVisitante) {
+            this.quiniela = "2";
             this.equipoVisitante.sumarPartidoGanado();
+        } else {
+            this.quiniela = "X";
         }
     }
 
