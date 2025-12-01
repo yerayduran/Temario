@@ -70,8 +70,7 @@ public class Principal {
                         }
                         break;
                     case 3:
-                        int opcion4 = MiEntradaSalida.solicitarEnteroPositivo("Pulsa 1 para volcar la jarra A en la B," +
-                                " pulsa 2 para volcar la jarra B en la A");
+                        int opcion4 = MiEntradaSalida.solicitarEnteroPositivo("Pulsa 1 para volcar la jarra A en la B," + " pulsa 2 para volcar la jarra B en la A");
 
                         switch (opcion4) {
                             case 1:

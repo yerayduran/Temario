@@ -45,20 +45,18 @@ public class Partidos {
         return equipoVisitante;
     }
 
-    // Hacemos los set para moidificar los atributos
+    // Hacemos los sets para modificar los atributos
     public void setEstadio(String estadio) {
         this.estadio = estadio;
     }
 
     public void setJornada(int jornada) throws FutbolException {
-
         if (jornada < 1 || jornada > 38) {
-
             throw new FutbolException("Este número no es válido para una jornada");
         }
-
         this.jornada = jornada;
     }
+
 
     public void ponerResultado(String resultado) {
 
@@ -77,11 +75,8 @@ public class Partidos {
 
         // Comprobamos que equipo gana y le sumamos 1 a los partidos ganados
         if (golesEquipoLocal > golesEquipoVisitante) {
-
             this.equipoLocal.sumarPartidoGanado();
-
         } else if (golesEquipoLocal < golesEquipoVisitante) {
-
             this.equipoVisitante.sumarPartidoGanado();
         }
     }
@@ -91,20 +86,9 @@ public class Partidos {
     public String toString() {
 
         if (jugado) {
-            return "Partido{" +
-                    "jornada=" + jornada +
-                    ", quiniela='" + quiniela + '\'' +
-                    ", estadio='" + estadio + '\'' +
-                    ", equipoLocal=" + equipoLocal +
-                    ", equipoVisitante=" + equipoVisitante +
-                    '}';
-
+            return "Partido: {" + "Jornada = " + jornada + " , Quiniela = '" + quiniela + '\'' + " , Estadio = '" + estadio + '\'' + " , Equipo Local = " + equipoLocal + " , Equipo Visitante = " + equipoVisitante + "}";
         } else {
-            return "Partido{" +
-                    "jornada=" + jornada +
-                    ", equipoLocal=" + equipoLocal.getNombre() +
-                    ", equipoVisitante=" + equipoVisitante.getNombre() +
-                    '}' + " Aún no se ha jugado";
+            return "Partido: {" + "Jornada = " + jornada + " , Equipo Local = " + equipoLocal.getNombre() + " , Equipo Visitante = " + equipoVisitante.getNombre() + "}" + " Aún no se ha jugado";
         }
     }
 }

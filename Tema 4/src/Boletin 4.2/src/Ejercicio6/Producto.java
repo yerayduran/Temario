@@ -9,21 +9,22 @@ public class Producto {
     private String descripcion;
     private double precio;
 
-    private static int contadorId = 0;
+    private static int contadorId = 1;
+    private static double IVA = 0.2;
 
-    public Producto(String descripcion, double precio, int idProducto){
+    public Producto(String descripcion, double precio){
         this.descripcion = descripcion;
         this.precio = precio;
-        this.idProducto = Integer.parseInt("PROD" + contadorId++);
+        this.idProducto = contadorId++;
     }
 
     public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) throws ProductoException {
-        if(precio < 0){
-            throw new ProductoException("Como vas a tener un producto gratis por la cara");
+    public void setPrecio(double precio)  throws ProductoException{
+        if (precio <= 0){
+            throw new ProductoException("Error: El precio no puede ser ni gratis ni negativo");
         }
         this.precio = precio;
     }
@@ -36,11 +37,17 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public int getIdProducto() {
-        return idProducto;
+    public static double getIVA(){
+        return IVA;
     }
 
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
+    public double precioVenta(){
+        return precio * (1 + getIVA());
+    }
+
+    public void mostrarInfo(){
+        System.out.println("Producto: " + this.descripcion);
+        System.out.println("Precio sin IVA: " + this.precio);
+        System.out.println("Precio con IVA: " + this.precioVenta());
     }
 }

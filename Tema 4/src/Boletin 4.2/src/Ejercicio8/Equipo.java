@@ -37,7 +37,7 @@ public class Equipo {
         return partidosGanados;
     }
 
-    // Comparamos los nombre de los equipos para ver si son el mismo equipo
+    // Comparamos los nombres de los equipos para ver si son el mismo equipo
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -59,6 +59,6 @@ public class Equipo {
     // Hacemos un toString
     @Override
     public String toString() {
-        return "Equipo{" + "nombre='" + nombre + '\'' + ", goles=" + goles + ", partidosGanados=" + partidosGanados + '}';
+        return "Equipo: {" + "Nombre = '" + nombre + '\'' + " , Goles = " + goles + ", Partidos Ganados = " + partidosGanados + " }";
     }
 }
