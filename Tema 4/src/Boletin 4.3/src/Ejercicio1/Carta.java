@@ -1,26 +1,20 @@
 package Ejercicio1;
 
-
 public class Carta {
 
+    // Atributos
     private String palo;
-    private final String[] número = {"1","2","3","4","5","6","7","8","9","10","J","Q","K"};
+    private String numero;
 
-    public Carta(){
-
-    }
-
-
-    public String getPalo() {
-        return palo;
-    }
-
-    public void setPalo(String palo) {
+    // Hacemos el constructor
+    public Carta(String palo, String numero) {
         this.palo = palo;
+        this.numero = numero;
     }
 
+    // Hacemos un toString, para poder imprimir las cartas que contiene la baraja en la clase 'Juego'
     @Override
     public String toString() {
-        return "Carta { " + "palo='" + palo + '\'' + ", número=" + número + '}';
+        return "Carta {" + "palo = '" + palo + '\'' + ", numero = '" + numero + '\'' + "}";
     }
 }
