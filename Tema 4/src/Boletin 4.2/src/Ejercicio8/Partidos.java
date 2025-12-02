@@ -109,7 +109,7 @@ public class Partidos {
     public String toString() {
 
         if (jugado) {
-            return "Partido: {" + "Jornada = " + jornada + " , Quiniela = '" + getQuiniela() + '\'' + " , Estadio = '" + estadio + '\'' + " , Equipo Local = " + equipoLocal + " , Equipo Visitante = " + equipoVisitante + "}";
+            return "Partido: {" + "Jornada = " + jornada + " , Quiniela = '" + getQuiniela() + '\'' + " , Estadio = '" + estadio + '\'' + " , Equipo Local = " + equipoLocal + ", Goles = " + getGolesEquipoLocal() + " , Equipo Visitante = " + equipoVisitante + ", Goles = " + getGolesEquipoVisitante() + "}";
         } else {
             return "Partido: {" + "Jornada = " + jornada + " , Equipo Local = " + equipoLocal.getNombre() + " , Equipo Visitante = " + equipoVisitante.getNombre() + "}" + " Aún no se ha jugado";
         }

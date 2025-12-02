@@ -55,6 +55,6 @@ public class Equipo {
     // Hacemos un toString
     @Override
     public String toString() {
-        return "Equipo: {" + "Nombre = '" + nombre + '\'' + " , Goles = " + goles + ", Partidos Ganados = " + partidosGanados + " }";
+        return "Equipo: {" + "Nombre = '" + nombre + '\'' +  ", Partidos Ganados = " + partidosGanados + " }";
     }
 }
