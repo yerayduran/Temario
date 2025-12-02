@@ -20,10 +20,6 @@ public class Equipo {
         this.goles = goles;
     }
 
-    public void setPartidosGanados(int partidosGanados) {
-        this.partidosGanados = partidosGanados;
-    }
-
     // Hacemos los get para acceder a estos atributos
     public String getNombre() {
         return nombre;
