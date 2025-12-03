@@ -10,11 +10,11 @@ public class Principal {
         Maquina m = new Maquina();
         int opcion;
         String[] opciones = {"Pulse 1 para pedir un café solo (1 euro)          |",
-                            "Pulse 2 para pedir leche (0,8 euros)              |",
-                            "Pulse 3 para pedir café con leche (1.5 euros)     |",
-                            "Pulse 4 para ver el estado de la máquina          |",
-                            "Pulsa 5 para vaciar el monedero                   |",
-                            "Pulse 6 para apagar la máquina y salir            |"};
+                "Pulse 2 para pedir leche (0,8 euros)              |",
+                "Pulse 3 para pedir café con leche (1.5 euros)     |",
+                "Pulse 4 para ver el estado de la máquina          |",
+                "Pulsa 5 para vaciar el monedero                   |",
+                "Pulse 6 para apagar la máquina y salir            |"};
 
         do {
             System.out.println("------------------ Maquina de Café ------------------|");
