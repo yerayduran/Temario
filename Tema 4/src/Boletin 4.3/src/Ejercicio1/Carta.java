@@ -15,6 +15,7 @@ public class Carta {
     // Hacemos un toString, para poder imprimir las cartas que contiene la baraja en la clase 'Juego'
     @Override
     public String toString() {
-        return "Carta {" + "palo = '" + palo + '\'' + ", numero = '" + numero + '\'' + "}";
+        //return "Carta {" + "palo = '" + palo + '\'' + ", numero = '" + numero + '\'' + "}";
+        return "%s de %s".formatted(numero, palo);
     }
 }
