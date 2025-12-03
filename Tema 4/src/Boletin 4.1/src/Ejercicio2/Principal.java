@@ -1,10 +1,6 @@
 package Ejercicio2;
 
-import Ejercicio2.Cuenta;
-
 import Ejercicio2.Exception.CuentaException;
-
-import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
