@@ -65,7 +65,7 @@ public class Juego {
     }
 
     // Hacemos un método para repartir las cartas a los jugadores
-    public void repartir(int numJugadores, int numCartas) throws CartaException {
+    public int repartir(int numJugadores, int numCartas) throws CartaException {
         if (numCartas * numJugadores > baraja.length) {
             throw new CartaException("No hay cartas suficientes");
         }
@@ -78,6 +78,7 @@ public class Juego {
         //Copiamos con el método de 'Arrays' la baraja desde un rango hasta otro
         this.baraja = Arrays.copyOfRange(this.baraja, numJugadores * numCartas, this.baraja.length);
 
+        return numJugadores;
     }
 
     // Hacemos un método para mostrar las cartas que quedan en el mazo
