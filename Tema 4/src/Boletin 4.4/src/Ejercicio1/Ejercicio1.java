@@ -7,7 +7,7 @@ public class Ejercicio1 {
         char caracter = MiEntradaSalida.solicitarCaracter("Introduce el caracter: ");
 
         int vecesAparece = contarCaracter(palabra.toLowerCase(), caracter = Character.toLowerCase(caracter));
-        System.out.println("En la palabra " + palabra + " aparece " + caracter + " " + vecesAparece + " veces");
+        System.out.println("En la frase " + palabra + " aparece " + caracter + " " + vecesAparece + " veces");
     }
 
     public static int contarCaracter(String cadena, char caracter) {
