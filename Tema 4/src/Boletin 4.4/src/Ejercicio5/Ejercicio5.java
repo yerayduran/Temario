@@ -21,6 +21,8 @@ public class Ejercicio5 {
     public static void reemplazarTexto(String frase, String palabra, String reemplazar){
 
         frase = frase.toLowerCase();
+        palabra = palabra.toLowerCase();
+        reemplazar = reemplazar.toLowerCase();
         String[] porPartes = frase.split(" ");
 
         for(int i = 0; i < porPartes.length; i++){
