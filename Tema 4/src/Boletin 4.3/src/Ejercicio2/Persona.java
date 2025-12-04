@@ -19,40 +19,8 @@ public class Persona {
         espacioOcupadoBuzonEntrega = 0;
     }
 
-    public void setMensajesRecibidos(Mensaje[] mensajesRecibidos) {
-        this.mensajesRecibidos = mensajesRecibidos;
-    }
-
-    public void setMensajesEnviados(Mensaje[] mensajesEnviados) {
-        this.mensajesEnviados = mensajesEnviados;
-    }
-
-    public void setEspacioOcupadoBuzonEntrega(int espacioOcupadoBuzonEntrega) {
-        this.espacioOcupadoBuzonEntrega = espacioOcupadoBuzonEntrega;
-    }
-
-    public void setEspacioOcupadoBuzonEnvio(int espacioOcupadoBuzonEnvio) {
-        this.espacioOcupadoBuzonEnvio = espacioOcupadoBuzonEnvio;
-    }
-
     public String getNombre() {
         return nombre;
-    }
-
-    public Mensaje[] getMensajesRecibidos() {
-        return mensajesRecibidos;
-    }
-
-    public Mensaje[] getMensajesEnviados() {
-        return mensajesEnviados;
-    }
-
-    public int getEspacioOcupadoBuzonEntrega() {
-        return espacioOcupadoBuzonEntrega;
-    }
-
-    public int getEspacioOcupadoBuzonEnvio() {
-        return espacioOcupadoBuzonEnvio;
     }
 
     public void enviarMensaje(Persona destinatario, String asunto, String cuerpo) throws MensajeException {
