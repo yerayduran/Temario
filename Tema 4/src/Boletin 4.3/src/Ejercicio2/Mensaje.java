@@ -1,19 +1,19 @@
 package Ejercicio2;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Mensaje {
 
     private String asunto;
     private String cuerpo;
-    private LocalDate fechaEnvio;
+    private LocalDateTime fechaEnvio;
     private Persona remitente;
     private Persona destinatario;
 
     public Mensaje(String asunto, String cuerpo, Persona remitente, Persona destinatario) {
         this.asunto = asunto;
         this.cuerpo = cuerpo;
-        this.fechaEnvio = LocalDate.now();
+        this.fechaEnvio = LocalDateTime.now();
         this.remitente = remitente;
         this.destinatario = destinatario;
     }
@@ -30,7 +30,7 @@ public class Mensaje {
         this.destinatario = destinatario;
     }
 
-    public void setFechaEnvio (LocalDate fechaEnvio){
+    public void setFechaEnvio (LocalDateTime fechaEnvio){
         this.fechaEnvio = fechaEnvio;
     }
 
@@ -46,7 +46,7 @@ public class Mensaje {
         return cuerpo;
     }
 
-    public LocalDate getFechaEnvio () {
+    public LocalDateTime getFechaEnvio () {
         return fechaEnvio;
     }
 
